@@ -1,0 +1,116 @@
+:root{
+  --clr-primary-50: #fad961;
+  --clr-primary-100: #ffde3c;
+  --clr-primary-200: #ffc134;
+  --clr-white: #ffffff;
+  --clr-black: #000000;
+  --clr-neutral-50: #fafafa;
+  --clr-neutral-300: #e0e0e0;
+  --clr-neutral-600: #757575;
+  --clr-background-body: #233042;
+  --clr-primary-body: #1e252c;
+  --clr-red: #e3494a;
+  --clr-background-primary: #fffdf8;
+  --clr-background-second: #0093e9;
+  --ff-Inter: 'Inter';
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url(../../assets/fonts/Inter/Inter-VariableFont_slnt\,wght.ttf);
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* General CSS */
+
+body {
+  font-family: 'Inter';
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  height: 90vh;
+  overflow: hidden;
+  margin: 2rem auto;
+  background-color:var(--clr-background-primary);
+  text-align: center;
+  
+} 
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 90vw;
+  height: 90vh; /**/
+  border-radius: 20px;
+  background: #ffc134;
+  /* box-shadow: 20px 20px 60px #d9a42c, -20px -20px 60px #ffde3c; */
+  /* effect phone */
+  position: relative;
+  border: 6px solid var(--clr-primary-body);
+  background-image: linear-gradient(160deg, #ffc134 0%, #fad961 100%);
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30),
+              0 15px 12px rgba(0, 0, 0, 0.22);
+}
+ 
+.panel {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 80vh; /**/
+  border-radius: 20px;
+  color: var(--clr-white);
+  cursor: pointer;
+  flex: 0.5;
+  margin: 10px;
+  position: relative;
+  transition: all 700ms ease-in;
+}
+
+.panel h3 {
+  font-size: 24px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  margin: 0;
+  opacity: 0;
+}
+
+.panel.active {
+  flex: 5;
+} 
+
+.panel.active h3 {
+  opacity: 1;
+  transition: opacity 0.3s ease-in 0.4s;
+}
+
+@media (min-width: 480px) {
+  .container{
+    flex-direction: row;
+    align-items: center;
+    /* width: 85vw; */
+  }
+  .panel:nth-of-type(4),
+  .panel:nth-of-type(5){
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .container{
+    width: 95vw;
+  }
+  .panel:nth-of-type(4),
+  .panel:nth-of-type(5){
+    display: flex;
+  }
+}
+
+
